@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Vehicle Service Management</title>
+
+<link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Vehicle Service Management System</h1>
+
+<a href="/addVehicle" class="btn">Add Vehicle</a>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+<th>Owner Name</th>
+<th>Vehicle Number</th>
+<th>Brand</th>
+<th>Model</th>
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody>
+
+<tr th:each="vehicle:${vehicles}">
+
+<td th:text="${vehicle.id}"></td>
+
+<td th:text="${vehicle.ownerName}"></td>
+
+<td th:text="${vehicle.vehicleNumber}"></td>
+
+<td th:text="${vehicle.brand}"></td>
+
+<td th:text="${vehicle.model}"></td>
+
+<td>
+
+<a th:href="@{/edit/{id}(id=${vehicle.id})}" class="edit">Edit</a>
+
+<a th:href="@{/delete/{id}(id=${vehicle.id})}" class="delete">Delete</a>
+
+<a th:href="@{/history/{id}(id=${vehicle.id})}" class="history">History</a>
+
+</td>
+
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+<script th:src="@{/js/script.js}"></script>
+
+</body>
+</html>

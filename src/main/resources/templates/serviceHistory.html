@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<title>Service History</title>
+
+<link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Service History</h2>
+
+<table>
+
+<tr>
+
+<th>Date</th>
+
+<th>Service Type</th>
+
+<th>Cost</th>
+
+</tr>
+
+<tr th:each="service:${services}">
+
+<td th:text="${service.serviceDate}"></td>
+
+<td th:text="${service.serviceType}"></td>
+
+<td th:text="${service.cost}"></td>
+
+</tr>
+
+</table>
+
+</div>
+
+</body>
+
+</html>

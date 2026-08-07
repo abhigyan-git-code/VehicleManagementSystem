@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+<title>Update Vehicle</title>
+
+<link rel="stylesheet" th:href="@{/css/style.css}">
+
+</head>
+
+<body>
+
+<div class="form-container">
+
+<h2>Update Vehicle</h2>
+
+<form action="/updateVehicle" method="post">
+
+<input type="hidden"
+name="id"
+th:value="${vehicle.id}">
+
+<input
+type="text"
+name="ownerName"
+th:value="${vehicle.ownerName}">
+
+<input
+type="text"
+name="vehicleNumber"
+th:value="${vehicle.vehicleNumber}">
+
+<input
+type="text"
+name="brand"
+th:value="${vehicle.brand}">
+
+<input
+type="text"
+name="model"
+th:value="${vehicle.model}">
+
+<button type="submit">
+
+Update Vehicle
+
+</button>
+
+</form>
+
+</div>
+
+</body>
+
+</html>
